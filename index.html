@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Eats</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* General Hero Section Styling */
+    .hero {
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      overflow: hidden;
+      animation: backgroundCarousel 20s infinite;
+    }
+  
+    /* Keyframes for the background carousel */
+    @keyframes backgroundCarousel {
+      0% {
+        background-image: url('https://imgur.com/a/tzjSely');
+      }
+      25% {
+        background-image: url('https://imgur.com/a/tzjSely');
+      }
+      50% {
+        background-image: url('https://imgur.com/a/tzjSely');
+      }
+      75% {
+        background-image: url('https://imgur.com/a/tzjSely');
+      }
+      100% {
+        background-image: url('https://imgur.com/a/tzjSely');
+      }
+    }
+  
+    /* Hero Section Content Styling */
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+  
+    .cta {
+      margin-top: 30px;
+    }
+  
+    .login-signup-btn {
+      padding: 15px 30px;
+      background-color: #199B74;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .login-signup-btn:hover {
+      background-color: #155f44;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background-color: green; /* Green bar */
+      width: 100%;
+    }
+
+    footer p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer a {
+      color: green;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #f5f5f5;">
+  <!-- Logo -->
+  <div style="flex: 1; text-align: center;">
+    <a href="index.html">
+    <img 
+      src="https://assets.onecompiler.app/434d7fyw2/434dbvvxx/IMG_20241228_184710_642-removebg-preview%20(2).png" 
+      alt="Eco Eats Logo" 
+      style="width: 150px; height: auto;"
+    >
+  </div>
+
+  <!-- Title -->
+  <div style="flex: 2; text-align: left; font-size: 24px; font-weight: bold;">
+    <h1 style="margin: 0; color: green;">Eco Eats</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav style="flex: 2; text-align: right;">
+    <a href="#" style="margin: 0 10px; text-decoration: none; color: #333;">Home</a>
+    <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">About us</a>
+    <a href="contact.html" style="margin: 0 10px; text-decoration: none; color: #333;">Contact</a>
+    <a href="#registration-section" style="margin: 0 10px; text-decoration: none; color: #333;">Register</a>
+    <a href="list-items.html" style="margin: 0 10px; text-decoration: none; color: #333;">Search for items</a>
+
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Rescue Food. Reduce Waste. Nourish Communities.</h2>
+  <p>Eco Eats connects businesses with excess food to local charities that need it most. Together, we can help reduce food waste and hunger. Join us today!</p>
+  <div class="cta">
+    <button class="login-signup-btn" onclick="navigateToLogin()">Login</button>
+  </div>
+</section>
+
+<!-- Registration Section -->
+<section id="registration-section" class="registration-section">
+  <div class="text-align: left;">
+    <h2>Donor/Seller Registration</h2>
+    <p>If you're a donor or seller with excess food, join us to help reduce food waste.</p>
+    <button onclick="window.location.href='register.html?type=donor'">Register as Donor/Seller</button>
+  </div>
+  <div class="text-align: right;">
+    <h2>Receiver/Buyer Registration</h2>
+    <p>If you're a receiver or buyer looking for surplus food, sign up to receive donations.</p>
+    <button onclick="window.location.href='receiver_register.html?type=receiver'">Register as Receiver/Buyer</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Eco Eats. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<script src="home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  // Function to navigate to login.html
+  function navigateToLogin() {
+    window.location.href = "login.html"; // Directs to the login page
+  }
+
+  // Handling the form submission for login (this is not used in this code directly, but assumed for backend integration)
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      alert('Login successful!');
+      console.log(response.data.token); // The token you get from the backend
+      localStorage.setItem('authToken', response.data.token); // Store the token for further requests
+    } catch (error) {
+      console.error('Login failed', error.response.data);
+      alert('Login failed!');
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+:root {
+  --primary-color: #199B74;
+  --secondary-color: #B94419;
+  --accent-color: #E5B141;
+  --neutral-light: #DBD9D5;
+  --neutral-dark: #56473A;
+}
+
+body {
+  font-family: 'Arial, sans-serif';
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about-container {
+  padding: 20px;
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.about-container h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-container strong {
+  color: var(--secondary-color);
+}
+
+:root {
+  --primary-color: #199B74;
+  --secondary-color: #B94419;
+  --accent-color: #E5B141;
+  --neutral-light: #DBD9D5;
+  --neutral-dark: #56473A;
+  --white: white;
+  --dark-gray: #333;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--neutral-light);
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--black);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+}
+
+header img {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--black);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+.login-signup-btn {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-signup-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.hero {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .cta button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Additional styles for sections (unchanged) */
+.registration-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 5%;
+  background-color: var(--neutral-light);
+}
+
+.left-section, .right-section {
+  width: 48%; /* Adjust width to ensure both sections fit side by side */
+  padding: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.left-section {
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.right-section {
+  text-align: right; /* Ensure text is right-aligned */
+}
+
+.left-section h2, .right-section h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.left-section p, .right-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.left-section button, .right-section button {
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.left-section button:hover, .right-section button:hover {
+  background-color: var(--accent-color);
+}

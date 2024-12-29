@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://assets.onecompiler.app/434dvsh9s/434dvstn6/delivery%20partner%20giving%20food%20to%20a%20poor%20man%20(1).png') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      color: #333;
+    }
+
+    .logo-container img {
+      max-width: 120px;
+      margin-top: 20px;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 50px auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="tel"], input[type="number"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://assets.onecompiler.app/434d7fyw2/434dbvvxx/IMG_20241228_184710_642-removebg-preview%20(2).png" alt="Logo">
+  </div>
+
+  <!-- Payment Form -->
+  <div class="form-container">
+    <h2>Payment Details</h2>
+    <form id="paymentForm">
+      <label for="buyerName">Buyer Name:</label>
+      <input type="text" id="buyerName" name="buyerName" placeholder="Enter your name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+      <label for="price">Total Price (₹):</label>
+      <input type="number" id="price" name="price" readonly>
+
+      <label for="paymentMethod">Payment Method:</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="upi">UPI</option>
+        <option value="card">Card</option>
+        <option value="cash">Cash</option>
+      </select>
+
+      <button type="submit">Pay</button>
+    </form>
+  </div>
+
+  <script>
+    // Retrieve the selected item details
+    const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+
+    if (selectedItem) {
+      // Calculate the price with a 5% increase
+      const increasedPrice = (parseFloat(selectedItem.price) * 1.05).toFixed(2);
+
+      // Display the increased price in the form
+      document.getElementById('price').value = increasedPrice;
+    } else {
+      alert('No item selected. Redirecting to list items.');
+      window.location.href = 'listitems.html';
+    }
+
+    // Handle form submission
+    document.getElementById('paymentForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Payment successful! Thank you for your purchase.');
+      localStorage.removeItem('selectedItem'); // Clear selected item after payment
+      window.location.href = 'listitems.html';
+    });
+  </script>
+</body>
+</html>
