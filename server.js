@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs'); // Import bcrypt for password hashing
 const path = require('path');
 
 const app = express();
-const port = 5012;
+const port = 5013;
 
 app.use(bodyParser.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
 app.use(express.static(path.join(__dirname, 'frontend'))); // Serve static files from frontend
@@ -12,10 +12,6 @@ app.use(express.static(path.join(__dirname, 'frontend'))); // Serve static files
 // In-memory "database" to store users
 let users = [];
 
-// Define the root route for `/` to serve the HTML page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html')); // Serve the HTML page for the root
-});
 
 // Registration Form Page
 app.get('/register', (req, res) => {

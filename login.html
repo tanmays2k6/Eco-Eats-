@@ -154,6 +154,23 @@
 
   <!-- Background Animation -->
   <div class="animated-bg"></div>
-  <script src="login.js"></script>
+
+  <script>
+    // Handle form submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Get selected role
+      const role = document.getElementById('role').value;
+
+      // Redirect based on selected role
+      if (role === "Donor/Seller") {
+        window.location.href = 'add-food.html'; // Redirect to add-food.html for Donor/Seller
+      } else if (role === "Receiver/Buyer") {
+        window.location.href = 'list-items.html'; // Redirect to list-items.html for Receiver/Buyer
+      }
+    });
+  </script>
+
 </body>
 </html>

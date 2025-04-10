@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - Eco Eats</title>
+  <style>
+    :root {
+      --primary-color: #199B74;
+      --neutral-light: #DBD9D5;
+      --neutral-dark: #56473A;
+      --hover-bg-color: black;
+      --hover-text-color: white;
+    }
+
+    body {
+      font-family: 'Arial, sans-serif';
+      margin: 0;
+      padding: 0;
+      background: url('https://assets.onecompiler.app/434d7fyw2/434d8xzmm/delivery%20partner%20giving%20food%20to%20a%20poor%20man.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--neutral-dark);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .faq-item {
+      background-color: white;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .faq-item:hover {
+      background-color: var(--hover-bg-color);
+    }
+
+    .faq-item:hover .faq-question {
+      color: var(--hover-text-color);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background-color: var(--neutral-light);
+      border-top: 1px solid var(--primary-color);
+      color: black;
+    }
+
+    .faq-answer:hover {
+      color: var(--hover-text-color);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="https://assets.onecompiler.app/434d7fyw2/434dbvvxx/IMG_20241228_184710_642-removebg-preview%20(2).png" alt="Eco Eats Logo">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQs</a>
+      <a href="#registration-section">Register</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#impact">Impact</a>
+      <a href="route.html">Route Analyser</a>
+      <a href="list-items.html">Search for items</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you measure the social impact of your platform?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We measure social impact by tracking the amount of food rescued, the number of meals distributed, and the reduction in greenhouse gas emissions from diverted food waste. Additionally, we gather feedback from NGOs and communities that benefit from the donations.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you help reduce food waste?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We connect grocery stores, restaurants, and other food businesses with NGOs and charities to redistribute surplus food. This prevents food from ending up in landfills and instead provides meals to those in need.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I list my business as a food donor?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, businesses can sign up on our platform to become food donors. Once registered, they can list surplus food items available for donation, and we will handle the redistribution process.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does your food redistribution process work?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our platform allows food donors to list surplus food items. NGOs can view and request these items, and our delivery network ensures the food reaches the intended recipients in a timely manner.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you prioritize which food to donate first?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We prioritize food donations based on expiry dates, ensuring that items with the shortest shelf life are distributed first to minimize waste and maximize usability.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the delivery system work for food donations?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our delivery system involves a network of logistics partners who coordinate pickups from food donors and drop-offs to NGOs. We use real-time tracking to ensure timely and efficient deliveries.</p>
+          </div>
+        </div>
+      </div>
+  
+  </main>
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const isVisible = answer.style.display === 'block';
+        answer.style.display = isVisible ? 'none' : 'block';
+        question.querySelector('span:last-child').textContent = isVisible ? '+' : '-';
+      });
+    });
+  </script>
+</body>
+</html>

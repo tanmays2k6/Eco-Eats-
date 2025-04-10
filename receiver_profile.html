@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receiver Profile</title>
+  <link rel="stylesheet" href="styles/receiver_profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <h1>Welcome, <span id="name"></span>!</h1>
+    <p><strong>User Type:</strong> Receiver</p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Mobile Number:</strong> <span id="mobile"></span></p>
+    <p><strong>Address:</strong> <span id="address"></span></p>
+  </div>
+  <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    document.getElementById('name').textContent = userData.name;
+    document.getElementById('email').textContent = userData.email;
+    document.getElementById('mobile').textContent = userData.mobile;
+    document.getElementById('address').textContent = userData.address;
+  </script>
+</body>
+</html>

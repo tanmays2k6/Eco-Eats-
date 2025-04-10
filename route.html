@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Eats Route Analyzer</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-success">
+        <a href="index.html">
+            <img src="https://assets.onecompiler.app/434d7fyw2/434dbvvxx/IMG_20241228_184710_642-removebg-preview%20(2).png" alt="Eco Eats Logo" style="height: 50px;">
+        </a>
+        <nav>
+            <a href="#" class="text-white mx-2">Home</a>
+            <a href="about.html" class="text-white mx-2">About us</a>
+            <a href="contact.html" class="text-white mx-2">Contact</a>
+            <a href="#registration-section" class="text-white mx-2">Register</a>
+            <a href="#how-it-works" class="text-white mx-2">How it Works</a>
+            <a href="#impact" class="text-white mx-2">Impact</a>
+            <a href="route.html" class="text-white mx-2">Route Analyser</a>
+            <a href="list-items.html" class="text-white mx-2">Search for items</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-center my-5">
+        <h1 class="text-success">Optimize Delivery Routes</h1>
+        <p class="text-muted">Find the best routes to rescue surplus food efficiently.</p>
+    </section>
+
+    <!-- Form Section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Enter Pickup and Drop-off Points</h3>
+                <form id="route-form">
+                    <div class="form-group">
+                        <label for="start">Pickup Location:</label>
+                        <input type="text" class="form-control" id="start" placeholder="Enter pickup point">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Drop-off Location:</label>
+                        <input type="text" class="form-control" id="destination" placeholder="Enter drop-off point">
+                    </div>
+                    <button type="submit" class="btn btn-success">Analyze Route</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Route Details</h3>
+                <div id="prediction-result" class="alert alert-info" style="display: none;">
+                    <p id="result-text">Calculating best route...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="container">
+        <div id="map" style="height: 500px;"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-success text-white">
+        <p>Eco Eats © 2024</p>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
